@@ -42,15 +42,27 @@ function App() {
           todo.id === id ? {...todo, completed: !todo.completed} : todo
         ))
     }
+        // Para filtrar por boton de tareas hechas (en copia)
+        const tasksDone = ()=>{
+          setBoton("done")
+          setCopia(toDoList.filter(todo => todo.completed))
+        }
+        // Para filtrar las tareas pendientes (en copia)
+        const tasksPending = ()=>{
+          setBoton("pending")
+          setCopia(toDoList.filter(todo => !todo.completed))
+        }
+        // Para traer todas las tareas (en copia)
+        const allTasks = () => {
+          setBoton("all")
+          setCopia(toDoList)
+        }
 
-console.log(toDoList)
-console.log(copia)
-console.log(boton)
     useEffect(() => {
       // si esto se dispara,entonces ejecuta el filtrado de tasksDone
       // y se muestran todas las tareas hechas
       setIsLoaded(true)
-      if(boton === "pending") {
+      if(boton === "pending" && isLoaded) {
         tasksPending()
       } else if (boton === "done") {
         tasksDone()
@@ -59,22 +71,6 @@ console.log(boton)
       }
       // esto va a estar pendiente del cambio hecho a toDolist en ChangeStatus
     }, [toDoList])
-
-    // Para filtrar por boton de tareas hechas (en copia)
-    const tasksDone = ()=>{
-      setBoton("done")
-      setCopia(toDoList.filter(todo => todo.completed))
-    }
-    // Para filtrar las tareas pendientes (en copia)
-    const tasksPending = ()=>{
-      setBoton("pending")
-      setCopia(toDoList.filter(todo => !todo.completed))
-    }
-    // Para traer todas las tareas (en copia)
-    const allTasks = () => {
-      setBoton("all")
-      setCopia(toDoList)
-    }
 
 
   return (
