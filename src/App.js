@@ -70,7 +70,7 @@ function App() {
         allTasks()
       }
       // esto va a estar pendiente del cambio hecho a toDolist en ChangeStatus
-    }, [toDoList])
+    }, [toDoList, allTasks, boton, isLoaded, tasksDone, tasksPending])
 
 
   return (
