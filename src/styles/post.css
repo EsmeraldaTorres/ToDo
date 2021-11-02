@@ -1,0 +1,35 @@
+
+.complete, .reset{
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    margin: 5px;
+    padding: 10px;
+    font-family: 'Indie Flower', cursive;
+    border: none;
+    border-radius: 5px;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+.complete{
+    background-color:#e6de7e;
+}
+.reset{
+    background-color: #e0db9d;
+    text-decoration: line-through;
+}
+.container{
+    padding: 1.2% 0;
+}
+
+@media (min-width: 556px){
+    .complete, .reset{
+        width: 50%;
+    }
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        text-align: center;
+    }
+}
