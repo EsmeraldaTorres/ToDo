@@ -85,7 +85,7 @@ function App() {
         allTasks()
       }
       // esto va a estar pendiente del cambio hecho a toDolist en ChangeStatus
-    }, [toDoList])
+    }, [toDoList, boton, isLoaded])
 
 
   return (
